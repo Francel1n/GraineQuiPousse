@@ -5,10 +5,8 @@
 body {
   background-color: aqua;
   background-image:url('fond-levrai.svg');
+  height: 100%;
+  background-position: cemter;
   background-repeat: no-repeat;
-  background-position: bottom;
+  background-size: cover;
   }
-
-
-
-
