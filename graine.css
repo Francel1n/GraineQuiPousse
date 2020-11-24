@@ -1,3 +1,14 @@
 #fleur {
   max-height: 500px;
 }
+
+body {
+  background-color: aqua;
+  background-image:url('fond-levrai.svg');
+  background-repeat: no-repeat;
+  background-position: bottom;
+  }
+
+
+
+
