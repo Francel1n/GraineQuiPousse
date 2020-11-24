@@ -1,6 +1,6 @@
 # GraineQuiPousse
 
-Projet en groupe de visualisation de données, créations fonction (JS), création graphismes, réflexions code, etc...
+Projet en groupe de visualisation de données, créations fonctions (JS), création graphismes, réflexions code, etc...
 
 - Découvrir l’asynchrone /
 - Se familiariser avec une bibliothèque d’animation graphique Javascript /
