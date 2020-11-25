@@ -1,6 +1,10 @@
 AnimFleur = new Vivus("fleur",{
   type: 'oneByOne',
-  duration: 10000,
+  duration: 1000,
+});
+AnimFleur2 = new Vivus("fleur2",{
+  type: 'oneByOne',
+  duration: 1000,
 });
 
 function HeureCheckEJS() {

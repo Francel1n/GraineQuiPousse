@@ -1,6 +1,17 @@
+#plantes{
+  display : grid;
+}
+
 #fleur {
+
   max-height: 500px;
 }
+#fleur2 {
+  
+  max-height: 700px;
+}
+
+
 
 body {
   background-color: aqua;
