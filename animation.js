@@ -1,3 +1,17 @@
+function getWeather() {
+  cityName = document.getElementById("input").value;
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=7b7fccc59b0e3578ffcf3a8e5693c318&units=metric&lang=fr`;
+  fetch(url).then((response) =>
+    response.json().then((data) => {
+      console.log(data);
+  let temp = data.main.temp;
+  let description = data.weather[0].description
+  console.log(description)
+  }));
+}
+let bouton = document.getElementById('bouton');
+bouton.addEventListener('click', getWeather);
+
 AnimFleur = new Vivus("fleur",{
   type: 'oneByOne',
   duration: 1000,
@@ -22,36 +36,30 @@ function HeureCheckEJS() {
   console.log(mois);
   annee = krucial.getFullYear();
   console.log(annee);
-  if (sec < 10){
+  if (sec < 10) {
 	 sec0 = "0";
-  }
-  else{
+  }else {
   	sec0 = "";
   }
-  if (min < 10){
+  if (min < 10) {
 		min0 = "0";
-  }
-  else{
+  }else {
   	min0 = "";
   }
-  if (heure < 10){
+  if (heure < 10) {
   	heure0 = "0";
-  }
-  else{
+  }else {
 		heure0 = "";
   }
+  
   DinaHeure = heure0 + heure + ":" + min0 + min + ":" + sec0 + sec;
   document.getElementById("ejs_heure").innerHTML=DinaHeure;
   setTimeout("HeureCheckEJS()", 1000)
   return heure;
 }
 
-//let heurePrez =HeureCheckEJS();
-
-
 function change() {
-  heurePrez =HeureCheckEJS();
-
+  heurePrez = HeureCheckEJS();
   console.log("youpiii"+heurePrez)
   if (heurePrez >= 6 && heurePrez <= 10 ){
     document.body.style.backgroundColor ="#FEB872" ;
@@ -65,8 +73,6 @@ function change() {
   else {
     document.body.style.backgroundColor = "#00003E";
   }
-
   setTimeout("change()", 1000)
-
 }
 change();
