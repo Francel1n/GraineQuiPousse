@@ -18,52 +18,51 @@ function HeureCheckEJS() {
   console.log(mois);
   annee = krucial.getFullYear();
   console.log(annee);
-  if (sec < 10)
+  if (sec < 10){
 	 sec0 = "0";
-  else
+  }
+  else{
   	sec0 = "";
-  if (min < 10)
+  }
+  if (min < 10){
 		min0 = "0";
-  else
+  }
+  else{
   	min0 = "";
-  if (heure < 10)
+  }
+  if (heure < 10){
   	heure0 = "0";
-  else
+  }
+  else{
 		heure0 = "";
+  }
   DinaHeure = heure0 + heure + ":" + min0 + min + ":" + sec0 + sec;
   document.getElementById("ejs_heure").innerHTML=DinaHeure;
   setTimeout("HeureCheckEJS()", 1000)
+  return heure;
 }
-  window.onload = HeureCheckEJS;
 
-function Change(heure) {
-  if (heure >= 10)
-    console.log("coucou");
-  //document.getElementsByTagName("body").style.color=#FF1232;
+//let heurePrez =HeureCheckEJS();
+
+
+function change() {
+  heurePrez =HeureCheckEJS();
+
+  console.log("youpiii"+heurePrez)
+  if (heurePrez >= 6 && heurePrez <= 10 ){
+    document.body.style.backgroundColor ="#FEB872" ;
+  }
+  else if (heurePrez >10 && heurePrez <18){
+    document.body.style.backgroundColor = "#66B4FF";
+  }
+  else if (heurePrez >=18 && heurePrez <=20){
+    document.body.style.backgroundColor = "#FFB6C1";
+  }
+  else {
+    document.body.style.backgroundColor = "#00003E";
+  }
+
+  setTimeout("change()", 1000)
+
 }
-Change(heure);
-
-  //document.getElementById("graine").innerHTML = AnimFleur;
-
-  // let imgNumber = 0;
-  // let totalimgNumber = 6;
-  // let anim = [];
-  //
-  // for (i=0; i<totalimgNumber; i++){
-  //   anim[i]= new Image (1000, 815);
-  //   anim[i].src ="imagesSVG/graine"+ (i+1)+ ".svg";
-  // }
-  //
-  // function switch2() {
-  // document.graine.src = anim[imgNumber].src;
-  //   imgNumber++;
-  //   if (imgNumber >= totalimgNumber) {
-  //    imgNumber = 0;
-  //  }
-  // }
-  //
-  // function animate1() {
-  //   setInterval(switch2, 1000);
-  // }
-  //
-  // onLoad= animate1()
+change();
