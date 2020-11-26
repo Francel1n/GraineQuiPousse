@@ -3,14 +3,35 @@ function getWeather() {
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=7b7fccc59b0e3578ffcf3a8e5693c318&units=metric&lang=fr`;
   fetch(url).then((response) =>
     response.json().then((data) => {
-      console.log(data);
+	console.log(data);
   let temp = data.main.temp;
-  let description = data.weather[0].description
-  console.log(description)
+  let description = data.weather[0].description;
+  let phrasemeteo = document.getElementById("meteo");
+  phrasemeteo.innerHTML = " Il fait " + temp + " degres et la m&eacute;teo : " + description ;
+  let meteomain = data.weather[0].main;
+  console.log(meteomain);
+  console.log(description);
+/*   let athleteFinalPosition = ‘first place’;
+switch (athleteFinalPosition) {
+  case ‘first place’:
+    console.log(‘You get the gold medal!’)
+    break
+  case ‘second place’:
+    console.log(‘You get the silver medal!’)
+    break
+  case ‘third place’:
+    console.log(‘You get the bronze medal!’)
+    break
+  default:
+    console.log(‘No medal awarded.’)
+  break */
+}
   }));
 }
 let bouton = document.getElementById('bouton');
 bouton.addEventListener('click', getWeather);
+
+
 
 AnimFleur = new Vivus("fleur",{
   type: 'oneByOne',
@@ -23,19 +44,19 @@ AnimFleur2 = new Vivus("fleur2",{
 
 function HeureCheckEJS() {
   krucial = new Date;
-  console.log(krucial);
+  //console.log(krucial);
   heure = krucial.getHours();
-  console.log(heure);
+  //console.log(heure);
   min = krucial.getMinutes();
-  console.log(min);
+  //console.log(min);
   sec = krucial.getSeconds();
-  console.log(sec);
+  //console.log(sec);
   jour = krucial.getDate();
-  console.log(jour);
+  //console.log(jour);
   mois = krucial.getMonth()+1;
-  console.log(mois);
+  //console.log(mois);
   annee = krucial.getFullYear();
-  console.log(annee);
+  //console.log(annee);
   if (sec < 10) {
 	 sec0 = "0";
   }else {
