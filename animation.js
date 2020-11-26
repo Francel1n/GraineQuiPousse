@@ -11,27 +11,41 @@ function getWeather() {
   let meteomain = data.weather[0].main;
   console.log(meteomain);
   console.log(description);
-/*   let athleteFinalPosition = ‘first place’;
-switch (athleteFinalPosition) {
-  case ‘first place’:
-    console.log(‘You get the gold medal!’)
-    break
-  case ‘second place’:
-    console.log(‘You get the silver medal!’)
-    break
-  case ‘third place’:
-    console.log(‘You get the bronze medal!’)
-    break
-  default:
-    console.log(‘No medal awarded.’)
-  break */
-
+  changeTemps(meteomain);
   }));
+}
+
+function changeTemps(e)  {
+  console.log("coucou");
+  switch (e) {
+    case "Clouds":
+      document.getElementById("temps").src="imagesSVG/nuage.svg"
+      snowStorm.stop();
+      console.log("SalutCloud");
+      break
+    case "Clear":
+      document.getElementById("temps").src="imagesSVG/soleil.svg"
+      snowStorm.stop()
+      console.log("SalutClear");
+      break
+    case "Snow":
+    snowStorm.toggleSnow();
+    console.log("SalutSnow");
+      break
+    case "Rain":
+    document.getElementById("temps").src="imagesSVG/soleil.svg"
+    snowStorm.stop()
+    console.log("SalutPluie");
+      break
+    default:
+      document.getElementById("temps").src="imagesSVG/nuage.svg"
+      console.log("SalutDefault");
+    break
+}
 }
 
 let bouton = document.getElementById('bouton');
 bouton.addEventListener('click', getWeather);
-
 
 
 AnimFleur = new Vivus("fleur",{
@@ -73,7 +87,7 @@ function HeureCheckEJS() {
   }else {
 		heure0 = "";
   }
-  
+
   DinaHeure = heure0 + heure + ":" + min0 + min + ":" + sec0 + sec;
   document.getElementById("ejs_heure").innerHTML=DinaHeure;
   setTimeout("HeureCheckEJS()", 1000)
