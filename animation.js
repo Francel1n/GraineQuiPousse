@@ -25,9 +25,10 @@ switch (athleteFinalPosition) {
   default:
     console.log(‘No medal awarded.’)
   break */
-}
+
   }));
 }
+
 let bouton = document.getElementById('bouton');
 bouton.addEventListener('click', getWeather);
 
