@@ -1,27 +1,37 @@
 #plantes{
-  display : grid;
+  display : block;
 }
 
 #fleur {
 
-  max-height: 500px;
+  max-width: 200px;
 }
 #fleur2 {
 
-  max-height: 700px;
+  max-width: 300px;
 }
 #temps {
+  float: right;
+  margin-right: 100px;
 
-  max-height: 350px;
+  max-width: 200px;
+  justify-content: space-around;
 }
 
+#ecrit{
+  float : left;
+  margin-left: 10px;
+
+}
 
 
 body {
   background-color: aqua;
   background-image:url('fond-levrai.svg');
-  height: 100%;
-  background-position: center;
+  width: 100%;
+  margin-bottom: 8%;
   background-repeat: no-repeat;
   background-size: cover;
+
+
   }
