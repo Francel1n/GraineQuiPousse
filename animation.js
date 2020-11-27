@@ -18,6 +18,10 @@ function getWeather() {
 function changeTemps(e)  {
   console.log("coucou");
   switch (e) {
+    case "Snow":
+    snowStorm.start();
+    console.log("SalutSnow");
+    break
     case "Clouds":
       document.getElementById("temps").src="imagesSVG/nuage.svg"
       snowStorm.stop();
@@ -28,10 +32,7 @@ function changeTemps(e)  {
       snowStorm.stop()
       console.log("SalutClear");
       break
-    case "Snow":
-    snowStorm.toggleSnow();
-    console.log("SalutSnow");
-      break
+
     case "Rain":
     document.getElementById("temps").src="imagesSVG/soleil.svg"
     snowStorm.stop()
