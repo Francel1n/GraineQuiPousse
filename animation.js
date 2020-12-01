@@ -49,25 +49,31 @@ let bouton = document.getElementById('bouton');
 bouton.addEventListener('click', getWeather);
 
 function anim1(){
-AnimFleur = new Vivus("fleur",{
+  let fleurPop = document.getElementById("fleur");
+  fleurPop.style.opacity = 1;
+  AnimFleur = new Vivus("fleur",{
+  type: 'oneByOne',
+  duration: 1000,
+});
+
+}
+
+function anim2(){
+  let fleurPop2 = document.getElementById("fleur2");
+  fleurPop2.style.opacity = 1;
+  AnimFleur2 = new Vivus("fleur2",{
   type: 'oneByOne',
   duration: 1000,
 });
 }
 
-function anim2(){
-  let fleurPop = document.getElementById("fleur2");
-  fleurPop.style.opacity = 1;
-  AnimFleur2 = new Vivus("fleur2",{
-  type: 'oneByOne',
-  duration: 2000,
-});
+  function animOnTime(){
+  setInterval( function() {
+    anim1();
+    setTimeout(anim2, 8000);
+  }, 16000);
 }
 
-function animOnTime(){
-  anim1();
-  setTimeout(anim2,10000);
-}
 
 animOnTime();
 
