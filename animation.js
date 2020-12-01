@@ -15,6 +15,7 @@ function getWeather() {
   }));
 }
 
+
 function changeTemps(e)  {
   console.log("coucou");
   switch (e) {
@@ -23,30 +24,29 @@ function changeTemps(e)  {
     console.log("SalutSnow");
     break
     case "Clouds":
-      document.getElementById("temps").src="imagesSVG/nuage.svg"
+      $("#temps").attr("src","imagesSVG/nuage.svg")
       snowStorm.stop();
       console.log("SalutCloud");
       break
     case "Clear":
-      document.getElementById("temps").src="imagesSVG/soleil.svg"
+      $("#temps").attr("src","imagesSVG/soleil.svg")
       snowStorm.stop()
       console.log("SalutClear");
       break
 
     case "Rain":
-    document.getElementById("temps").src="imagesSVG/soleil.svg"
+    $("#temps").attr("src","imagesSVG/soleil.svg")
     snowStorm.stop()
     console.log("SalutPluie");
       break
     default:
-      document.getElementById("temps").src="imagesSVG/nuage.svg"
+      $("#temps").attr("src","imagesSVG/nuage.svg")
       console.log("SalutDefault");
     break
 }
 }
 
-let bouton = document.getElementById('bouton');
-bouton.addEventListener('click', getWeather);
+$("#bouton").on("click", getWeather)
 
 function anim1(){
   let fleurPop = document.getElementById("fleur");
@@ -67,11 +67,22 @@ function anim2(){
 });
 }
 
+
   function animOnTime(){
   setInterval( function() {
     anim1();
     setTimeout(anim2, 8000);
-  }, 16000);
+
+
+// divfleur = document.getElementById("plantes");
+// divfleur_prime = divfleur.cloneNode(true);
+// divfleur_prime.id="fleurClone";
+// document.body.appendChild(divfleur_prime);
+// divfleur_prime.style.opacity=1
+// function animOnTime(){
+//   anim1();
+//   setTimeout(anim2,8000);
+
 }
 
 
