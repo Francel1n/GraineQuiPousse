@@ -24,29 +24,29 @@ function changeTemps(e)  {
     console.log("SalutSnow");
     break
     case "Clouds":
-      $("#temps").attr("src","imagesSVG/nuage.svg")
+      document.getElementById("temps").src="imagesSVG/nuage.svg";
       snowStorm.stop();
       console.log("SalutCloud");
       break
     case "Clear":
-      $("#temps").attr("src","imagesSVG/soleil.svg")
+      document.getElementById("temps").src="imagesSVG/soleil.svg";
       snowStorm.stop()
       console.log("SalutClear");
       break
 
     case "Rain":
-    $("#temps").attr("src","imagesSVG/soleil.svg")
+    document.getElementById("temps").src="imagesSVG/soleil.svg";
     snowStorm.stop()
     console.log("SalutPluie");
       break
     default:
-      $("#temps").attr("src","imagesSVG/nuage.svg")
+      document.getElementById("temps").src="imagesSVG/nuage.svg";
       console.log("SalutDefault");
     break
 }
 }
 
-$("#bouton").on("click", getWeather)
+document.getElementById("bouton").onclick = getWeather;
 
 function anim1(){
   let fleurPop = document.getElementById("fleur");
