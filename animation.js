@@ -72,21 +72,17 @@ function anim2(){
   setInterval( function() {
     anim1();
     setTimeout(anim2, 8000);
-
-
-// divfleur = document.getElementById("plantes");
-// divfleur_prime = divfleur.cloneNode(true);
-// divfleur_prime.id="fleurClone";
-// document.body.appendChild(divfleur_prime);
-// divfleur_prime.style.opacity=1
-// function animOnTime(){
-//   anim1();
-//   setTimeout(anim2,8000);
-
+  });
 }
 
-
+// function animOnTime(){
+//   setInterval( function() {
+//     anim1();
+//     setTimeout(anim2, 8000);
+//   }, 16000);
+// }
 animOnTime();
+
 
 function HeureCheckEJS() {
   krucial = new Date;
